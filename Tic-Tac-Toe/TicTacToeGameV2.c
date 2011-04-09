@@ -45,7 +45,6 @@ int main(void) {
   pmsSizes->num_cols = MAX_COL_SIZE;
 
   if ((ppcTwoDArray = create2dArray(pmsSizes)) == NULL) {
-    printf("Memory allocation failure for ppcTwoDArray!\n");
     return -1;
   }
 
