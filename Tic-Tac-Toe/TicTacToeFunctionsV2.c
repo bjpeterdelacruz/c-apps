@@ -24,6 +24,11 @@
 int startOver(char** ppcTwoDArray, TwoDArraySizes* pmsSizes, int* moveCount, char* whoseTurn) {
   int randNum = 0;
 
+  if (!ppcTwoDArray || !pmsSizes || !moveCount || !whoseTurn) {
+    printf("NULL pointer passed to clearBoard function: [%p][%p][%p][%p].\n", ppcTwoDArray, pmsSizes, moveCount, whoseTurn);
+    return -1;
+  }
+
   if ((ppcTwoDArray = clearBoard(ppcTwoDArray, pmsSizes)) < 0) {
     return -1;
   }
