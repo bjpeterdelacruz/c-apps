@@ -26,23 +26,23 @@ int switch_characters(char* string) {
 
   for (posX = 0; posX < length; posX++) {
     for (posY = posX; string[posY] != ' ' &&
-	                  string[posY] != '\0' &&
-					  ((string[posY] > 47 && string[posY] < 58) ||
-					   (string[posY] > 64 && string[posY] < 91) ||
-					   (string[posY] > 96 && string[posY] < 123)); posY++);
-	tempPos = posY;
-	posY--;
-	while (posY > posX) {
-	  temp = string[posY];
-	  string[posY] = string[posX];
-	  string[posX] = temp;
-	  posY--;
-	  posX++;
-	}
-	posX = tempPos;
-	if (string[tempPos] != ' ' && string[tempPos] != '\0') {
-	  posX++;
-	}
+                      string[posY] != '\0' &&
+                      ((string[posY] > 47 && string[posY] < 58) ||
+                       (string[posY] > 64 && string[posY] < 91) ||
+                       (string[posY] > 96 && string[posY] < 123)); posY++);
+    tempPos = posY;
+    posY--;
+    while (posY > posX) {
+      temp = string[posY];
+      string[posY] = string[posX];
+      string[posX] = temp;
+      posY--;
+      posX++;
+    }
+    posX = tempPos;
+    if (string[tempPos] != ' ' && string[tempPos] != '\0') {
+      posX++;
+    }
   }
 
   return 0;
@@ -60,7 +60,7 @@ int main() {
   char* string = (char*) malloc(sizeof(char) * 100);
   if (string == NULL) {
     printf("Failed to allocate memory.\n");
-	exit(1);
+    exit(1);
   }
 
   strcpy(string, "Hello World! My cat, Wiggles, likes to sleep.");
