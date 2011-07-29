@@ -83,5 +83,7 @@ int main(char** argv, int argc) {
 
   findAllPalindromes(string, 3); /* N = 3 */
 
+  free(string);
+
   return 0;
 }
