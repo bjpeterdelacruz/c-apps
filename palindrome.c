@@ -48,9 +48,9 @@ int findAllPalindromes(char* string, int sublen) {
       }
       printf("\n");
     }
-	else {
+    else {
       isPalindrome = TRUE;
-	}
+    }
   }
 
   return 0;
