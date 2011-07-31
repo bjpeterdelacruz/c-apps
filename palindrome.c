@@ -29,7 +29,7 @@ int findAllPalindromes(char* string, int sublen) {
 
   length = strlen(string);
   for (start = 0; start < length - (sublen - 1); start++) {
-    for (end = start + sublen - 1; string[start] != string[end] && string[end] != '\0'; end++);
+    for (end = start + sublen - 1; (string[start] != string[end] || string[start] == string[end + 1]) && string[end] != '\0'; end++);
 
     left = start;
     right = end;
