@@ -53,7 +53,7 @@ long findNthUglyNumber(int nth) {
  * An ugly number is a number whose prime factors are only 2, 3, or 5.
  */
 int main() {
-  int result;
+  long result;
   int nth;
   time_t start, end;
 
@@ -65,7 +65,7 @@ int main() {
   end = time(NULL);
 
   if (result > 0) {
-    printf("The %dth ugly number is %d.\n", nth, result);
+    printf("The %dth ugly number is %ld.\n", nth, result);
     printf("Time elapsed: %.1f seconds\n", difftime(end, start));
   }
 
