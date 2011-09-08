@@ -49,6 +49,34 @@ long findNthUglyNumber(int nth) {
 }
 
 /**
+ * Given a number, this function returns the appropriate suffix. For example:
+ * 11th, 12th, 13th, 21st, 22nd, 23rd, 24th, 25th...
+ *
+ * Parameters: nth : the number for which to get the suffix.
+ *
+ * Returns: "st", "nd", "rd", or "th" based on the number.
+ */
+const char* convert(int nth) {
+  int n = (nth < 0) ? -nth : nth; /* Always use positive integers. */
+
+  /* 11, 12, and 13 */
+  if (10 < (n % 100) && (n % 100) < 14) {
+    return "th";
+  }
+ 
+  switch (n % 10) {
+    case 1:
+      return "st";
+    case 2:
+      return "nd";
+    case 3:
+      return "rd";
+    default:
+      return "th";
+  }
+}
+
+/**
  * This program finds the n-th ugly number, where n is a number inputted by the user.
  * An ugly number is a number whose prime factors are only 2, 3, or 5.
  */
@@ -65,7 +93,7 @@ int main() {
   end = time(NULL);
 
   if (result > 0) {
-    printf("The %dth ugly number is %ld.\n", nth, result);
+    printf("The %d%s ugly number is %ld.\n", nth, convert(nth), result);
     printf("Time elapsed: %.1f seconds\n", difftime(end, start));
   }
 
