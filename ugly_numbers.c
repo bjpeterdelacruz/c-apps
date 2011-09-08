@@ -45,7 +45,10 @@ long findNthUglyNumber(int nth) {
   }
   printf("\n");
 
-  return lArray[nth - 1];
+  number = lArray[nth - 1];
+  free(lArray);
+
+  return number;
 }
 
 /**
